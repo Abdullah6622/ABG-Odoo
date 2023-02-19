@@ -1,0 +1,25 @@
+<odoo>
+    <record id="cf_inherit_mrp_production" model="ir.ui.view">
+        <field name="name">inherit.mrp.production.form.view</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='components']" position="after">
+                <page name="shift" string="Shift">
+                    <field name="shifts_ids">
+                        <tree editable="top">
+                            <field name="shift_id" string="Shift"/>
+                            <field name="quantity" string="Quantity"/>
+                            <field name="uom" string="UOM"/>
+                        </tree>
+                        <form>
+                            <field name="shift_id" string="Shift"/>
+                            <field name="quantity" string="Quantity"/>
+                            <field name="uom" string="UOM"/>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
